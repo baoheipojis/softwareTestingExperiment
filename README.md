@@ -539,7 +539,7 @@ Selenium 需要使用 WebDriver 提供的接口，以驱动浏览器的自动化
 
 作为最好的开源移动应用测试自动化框架之一，Appium 同样基于 Selenium WebDriver 开发，支持使用相同的 API 为不同平台编写 UI 测试，并提供对不同编程语言的支持。在此我们以Python为例。
 
-首先安装Node.js，不同平台的安装方式可参考[文档](https://nodejs.org/zh-cn/download)。
+首先安装 Node.js，不同平台的安装方式可参考[文档](https://nodejs.org/zh-cn/download)。
 
 通过 Node.js 的包管理工具 npm 安装 Appium Server
 
