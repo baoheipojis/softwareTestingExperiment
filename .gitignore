@@ -4,3 +4,4 @@ unittest-cpp/build/
 **/.*/
 **/__pycache__/
 **/~*
+.DS_Store

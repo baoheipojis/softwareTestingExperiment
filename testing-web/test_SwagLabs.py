@@ -49,11 +49,21 @@ class ShoppingSystemTests(unittest.TestCase):
     def test_login_wrong(self):
         """测试输入错误的用户名或密码时是否显示相应错误提示"""
         # TODO: 请补充完整测试代码
+        self.login("standard_use","secret_sauc")
+        time.sleep(2)
+        self.assertIn('https://www.saucedemo.com/', self.driver.current_url)
+        # 下面这行的语义是：查找页面中第一个
+        error_message = self.driver.find_element(By.CSS_SELECTOR, 'h3').text
+        self.assertIn("Epic sadface: Username and password do not match any user in this service", error_message)
         
     def test_login_locked(self):
         """测试输入被锁定的用户时是否显示相应错误提示"""
         self.login("locked_out_user", "secret_sauce")
         # TODO: 请补充完整测试代码
+        time.sleep(2)
+        error_message = self.driver.find_element(By.CSS_SELECTOR, 'h3').text
+        self.assertIn("Epic sadface: Sorry, this user has been locked out.", error_message)
+        
 
     # ---------------------- 购物车功能测试 ----------------------
     @parameterized.expand([
@@ -67,6 +77,8 @@ class ShoppingSystemTests(unittest.TestCase):
     def test_add_to_cart(self, item_name, button_id):
         """测试添加商品到购物车功能"""
         # TODO: 请补充完整测试代码
+        self.login("standard_user","secret_sauce")
+        self.reset_state()
 
     def test_remove_from_cart(self):
         """测试是否能够删除购物车中的商品"""
