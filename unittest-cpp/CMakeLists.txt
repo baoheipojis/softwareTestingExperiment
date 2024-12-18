@@ -18,7 +18,7 @@ enable_testing()
 
 # Define test executable name and source file
 set(TEST_EXECUTABLE_NAME hello_test)
-set(TEST_SOURCE_FILE hello_test.cc)
+set(TEST_SOURCE_FILE hello_test.cc calculator_test.cc)
 
 add_executable(${TEST_EXECUTABLE_NAME} ${TEST_SOURCE_FILE})
 target_link_libraries(${TEST_EXECUTABLE_NAME} GTest::gtest_main)

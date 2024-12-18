@@ -6,7 +6,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 capabilities = dict(
     platformName='Android',
     automationName='uiautomator2',
-    deviceName='Android',
+    deviceName='192.168.3.9:5555',
     appPackage='com.android.settings',
     appActivity='.Settings',
     language='en',
@@ -24,6 +24,7 @@ class TestAppium(unittest.TestCase):
             self.driver.quit()
 
     def test_find_battery(self) -> None:
+        # 因为我们待测的小米手机没有Battery，所以可以把Battery改成WLAN
         el = self.driver.find_element(by=AppiumBy.XPATH, value='//*[@text="Battery"]')
         el.click()
 
