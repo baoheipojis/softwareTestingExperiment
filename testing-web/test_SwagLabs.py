@@ -77,8 +77,14 @@ class ShoppingSystemTests(unittest.TestCase):
     def test_add_to_cart(self, item_name, button_id):
         """测试添加商品到购物车功能"""
         # TODO: 请补充完整测试代码
-        self.login("standard_user","secret_sauce")
+        self.login("error_user","secret_sauce")
         self.reset_state()
+        self.add_to_cart(button_id)
+        self.driver.get("https://www.saucedemo.com/cart.html")
+        cart_item = self.driver.find_element(By.CLASS_NAME, 'cart_item')
+        item_name_in_cart = cart_item.find_element(By.CLASS_NAME, 'inventory_item_name').text
+        self.assertEqual(item_name, item_name_in_cart)
+
 
     def test_remove_from_cart(self):
         """测试是否能够删除购物车中的商品"""
