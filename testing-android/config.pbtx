@@ -43,7 +43,7 @@ data_sources: {
         perf_event_config {
             timebase {
                 frequency: 100
-                timestamp_clock: PERF_CLOCK_BOOTTIME
+                #timestamp_clock: PERF_CLOCK_BOOTTIME
             }
             callstack_sampling {
                 scope {
@@ -62,7 +62,7 @@ data_sources: {
             stat_period_ms: 1000
             stat_counters: STAT_CPU_TIMES
             stat_counters: STAT_FORK_COUNT
-            cpufreq_period_ms: 1000
+            #cpufreq_period_ms: 1000
         }
     }
 }

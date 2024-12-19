@@ -7,3 +7,5 @@ unittest-cpp/build/
 .DS_Store
 unittest-cpp/cmake-build-debug/hello_test\[1]_include.cmake
 unittest-cpp/cmake-build-debug/hello_test\[1]_tests.cmake
+unittest-cpp/cmake-build-debug/CMakeFiles/hello_test.dir/
+*.o

@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 capabilities = {
     "platformName": "Android",
-    "deviceName": "192.168.3.9:5555",  # 根据设备名称修改
+    "deviceName": "192.168.3.29:5555",  # 根据设备名称修改
     "appPackage": "com.lolo.io.onelist",
     "appActivity": ".MainActivity",
     "automationName": "UiAutomator2",

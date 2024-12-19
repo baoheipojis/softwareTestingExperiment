@@ -19,7 +19,7 @@ protected:
 };
 
 // 1.4.3：定义测试夹具 CalculatorCombinedTest
-class CalculatorCombinedTest : public TestWithParam<std::tuple<int, int, int, int>> {
+class CalculatorCombinedTest : public TestWithParam<std::tuple<int, int, int>> {
 protected:
     Calculator calc;
 };
@@ -66,13 +66,12 @@ INSTANTIATE_TEST_SUITE_P(AdditionTests, CalculatorParamTest, Values(
 
 TEST_P(CalculatorCombinedTest, AddCombination) {
     int a, b, c, expected;
-    std::tie(a, b, c, expected) = GetParam();
-    EXPECT_EQ(expected, calc.add(calc.add(a, b), c));
+    std::tie(a, b, c) = GetParam();
+    EXPECT_EQ(a+b+c, calc.add(calc.add(a, b), c));
 }
 
 INSTANTIATE_TEST_SUITE_P(AdditionCombinationTests, CalculatorCombinedTest, Combine(
     Values(1, 2, 3),
     Values(4, 5, 6),
-    Values(7, 8, 9),
-    Values(12, 15, 18)
+    Values(7, 8, 9)
 ));
